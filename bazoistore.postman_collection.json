@@ -1,0 +1,325 @@
+{
+  "info": {
+    "name": "Baozi Store API",
+    "description": "Collection completa para testar a API REST da Baozi Store. Cobre todos os endpoints de Clientes, Produtos e Pedidos.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Criar Cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Bruno RU123456\",\n  \"clienteDesde\": \"2026-05-10\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/clientes",
+              "host": ["{{baseUrl}}"],
+              "path": ["clientes"]
+            },
+            "description": "Cria um novo cliente. Retorna 201 Created com o objeto criado incluindo o ID gerado."
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Clientes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/clientes",
+              "host": ["{{baseUrl}}"],
+              "path": ["clientes"]
+            },
+            "description": "Retorna a lista completa de todos os clientes cadastrados."
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Cliente por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/clientes/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["clientes", "1"]
+            },
+            "description": "Retorna um cliente específico pelo ID. Substitua o '1' pelo ID desejado. Retorna 404 se não encontrado."
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Cliente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Bruno Atualizado RU123456\",\n  \"clienteDesde\": \"2026-01-01\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/clientes/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["clientes", "1"]
+            },
+            "description": "Atualiza os dados de um cliente existente pelo ID. Retorna 404 se não encontrado."
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Cliente",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/clientes/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["clientes", "1"]
+            },
+            "description": "Remove um cliente pelo ID. Retorna 204 No Content em caso de sucesso, 404 se não encontrado."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "Criar Produto",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Baozi Tradicional\",\n  \"preco\": 8.50,\n  \"estoque\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtos"]
+            },
+            "description": "Cria um novo produto no catálogo. Retorna 201 Created com o objeto criado incluindo o ID gerado."
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Produtos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtos"]
+            },
+            "description": "Retorna a lista completa de todos os produtos cadastrados."
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Produto por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtos", "1"]
+            },
+            "description": "Retorna um produto específico pelo ID. Substitua o '1' pelo ID desejado. Retorna 404 se não encontrado."
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Produto",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Baozi de Carne\",\n  \"preco\": 10.00,\n  \"estoque\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/produtos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtos", "1"]
+            },
+            "description": "Atualiza os dados de um produto existente pelo ID. Retorna 404 se não encontrado."
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Produto",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/produtos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["produtos", "1"]
+            },
+            "description": "Remove um produto pelo ID. Retorna 204 No Content em caso de sucesso, 404 se não encontrado."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pedidos",
+      "item": [
+        {
+          "name": "Criar Pedido",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 1,\n  \"produtoId\": 1,\n  \"quantidade\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pedidos",
+              "host": ["{{baseUrl}}"],
+              "path": ["pedidos"]
+            },
+            "description": "Cria um novo pedido associando um cliente a um produto com uma quantidade. Certifique-se de que o clienteId e produtoId existam antes. Retorna 201 Created."
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Pedidos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pedidos",
+              "host": ["{{baseUrl}}"],
+              "path": ["pedidos"]
+            },
+            "description": "Retorna a lista completa de todos os pedidos registrados."
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar Pedido por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pedidos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["pedidos", "1"]
+            },
+            "description": "Retorna um pedido específico pelo ID. Substitua o '1' pelo ID desejado. Retorna 404 se não encontrado."
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar Pedido",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 1,\n  \"produtoId\": 1,\n  \"quantidade\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pedidos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["pedidos", "1"]
+            },
+            "description": "Atualiza os dados de um pedido existente pelo ID. Retorna 404 se não encontrado."
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar Pedido",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/pedidos/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["pedidos", "1"]
+            },
+            "description": "Remove um pedido pelo ID. Retorna 204 No Content em caso de sucesso, 404 se não encontrado."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
